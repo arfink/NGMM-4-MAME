@@ -13,8 +13,10 @@ def execute(cmd):
 
 
 def main():
+    # Enter your device location below, in place of '/dev/ttyAMC0'. Make sure your location is enclosed like this: '/location'
     ser = serial.Serial('/dev/ttyACM0', 57600)
-
+    
+    # Edit this line to change the 4 games selected by running this script
     for output in execute(["mame", "neogeo", "-cart1", "mslug", "-cart2", "pbobblen", "-cart3", "lastblad", "-cart4", "pnyaa", "-output", "console"]):
 
         r = re.search("digit(\d*) = (\d*)", output)
